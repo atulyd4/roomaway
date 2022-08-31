@@ -18,7 +18,6 @@ from datetime import timedelta
 import dj_database_url
 
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,14 +27,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 dev_secret = "django-insecure-=u*j4!1n2@j98h&0n!u)hxm33lt=i2f7xvv4r@b=s^)mj$fevg"
-SECRET_KEY = os.environ.get('SECRET_KEY', dev_secret)
+SECRET_KEY = os.environ.get("SECRET_KEY", dev_secret)
 
-ALLOWED_HOSTS=["0.0.0.0", "192.168.1.11", "web-production-0dc7.up.railway.app"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "0.0.0.0",
+    "192.168.1.11",
+    "web-production-0dc7.up.railway.app",
+]
 CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
 CORS_ALLOW_METHODS = list(default_methods)
 APPEND_SLASH = False
 
-DEBUG= True if os.environ['DEBUG'] == 'True' else False
+# debug = True if os.environ.get('DEBUG', False) == 'True' else False
+# print('debug : ' + str(debug) )
+DEBUG = False
 
 # Application definition
 
@@ -55,8 +62,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -75,9 +82,7 @@ REST_FRAMEWORK = {
     "NON_FIELD_ERRORS_KEY": "some errors key",
 }
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "frontend", "static", "frontend"),
@@ -85,10 +90,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "uploads"),
 ]
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_URL = "/uploads/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
-
 
 TEMPLATES = [
     {
@@ -122,7 +126,7 @@ DATABASES = {
 }
 
 db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+DATABASES["default"].update(db_from_env)
 
 
 # Password validation
