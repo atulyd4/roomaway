@@ -19,19 +19,12 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
     TokenRefreshView,
 )
 from rest_framework_simplejwt.views import TokenVerifyView
 from hotelbooking.views import MyTokenObtainPairView
 from django.conf.urls.static import static
 from django.conf import settings
-
-print("#################################################################")
-print(str(settings.STATIC_URL))
-print(str(settings.STATIC_ROOT))
-print("#################################################################")
-
 
 schema_view = get_schema_view(
     openapi.Info(

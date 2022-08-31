@@ -1,0 +1,6 @@
+.env
+db.sqlite3
+uploads/*
+frontend/node_modules
+.venv
+frontend/static/frontend/*

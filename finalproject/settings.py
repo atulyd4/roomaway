@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from distutils.debug import DEBUG
 import os
 from pathlib import Path
 from corsheaders.defaults import default_methods
@@ -26,11 +27,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-=u*jimport dj_database_url"
+dev_secret = "django-insecure-=u*j4!1n2@j98h&0n!u)hxm33lt=i2f7xvv4r@b=s^)mj$fevg"
+SECRET_KEY = os.environ.get('SECRET_KEY', dev_secret)
 
+ALLOWED_HOSTS=["0.0.0.0", "192.168.1.11"]
 CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
 CORS_ALLOW_METHODS = list(default_methods)
 APPEND_SLASH = False
+
+DEBUG=os.environ.get('DEBUG', False)
 
 # Application definition
 
@@ -50,6 +55,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "corsheaders.middleware.CorsMiddleware",
@@ -69,10 +75,13 @@ REST_FRAMEWORK = {
     "NON_FIELD_ERRORS_KEY": "some errors key",
 }
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 STATIC_URL = "static/"
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "frontend", "static", "frontend"),
+    os.path.join(BASE_DIR, "frontend", "static"),
     os.path.join(BASE_DIR, "uploads"),
 ]
 
