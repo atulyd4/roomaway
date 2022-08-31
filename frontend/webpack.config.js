@@ -5,11 +5,7 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "./static/frontend"),
-    filename: "[name].js",
-    // asyncChunks: true,
-    // chunkFilename: '[id].js',
-    // devtoolModuleFilenameTemplate: 'webpack://[namespace]/[resource-path]?[loaders]',
-    // chunkLoading: 'async-node',
+    filename: 'main.js'
   },
   resolve: {
     alias: {
