@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 dev_secret = "django-insecure-=u*j4!1n2@j98h&0n!u)hxm33lt=i2f7xvv4r@b=s^)mj$fevg"
 SECRET_KEY = os.environ.get('SECRET_KEY', dev_secret)
 
-ALLOWED_HOSTS=["0.0.0.0", "192.168.1.11"]
+ALLOWED_HOSTS=["0.0.0.0", "192.168.1.11", "web-production-0dc7.up.railway.app"]
 CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
 CORS_ALLOW_METHODS = list(default_methods)
 APPEND_SLASH = False
