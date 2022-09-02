@@ -40,9 +40,9 @@ CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
 CORS_ALLOW_METHODS = list(default_methods)
 APPEND_SLASH = False
 
-# debug = True if os.environ.get('DEBUG', False) == 'True' else False
+debug = True if os.environ.get("DEBUG", False) == "True" else False
 # print('debug : ' + str(debug) )
-DEBUG = False
+DEBUG = debug
 
 # Application definition
 
