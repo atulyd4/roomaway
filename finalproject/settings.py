@@ -72,6 +72,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+CSRF_TRUSTED_ORIGINS = ["https://web-production-0dc7.up.railway.app/"]
 AUTH_USER_MODEL = "hotelbooking.User"
 ROOT_URLCONF = "finalproject.urls"
 
