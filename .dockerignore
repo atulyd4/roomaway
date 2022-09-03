@@ -4,3 +4,4 @@ uploads/*
 frontend/node_modules
 .venv
 frontend/static/frontend/*
+static/*

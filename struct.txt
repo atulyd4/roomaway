@@ -1,0 +1,456 @@
+.
+├── db.sqlite3
+├── Dockerfile
+├── finalproject
+│   ├── asgi.py
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── __init__.cpython-39.pyc
+│   │   ├── settings.cpython-310.pyc
+│   │   ├── settings.cpython-39.pyc
+│   │   ├── urls.cpython-310.pyc
+│   │   ├── urls.cpython-39.pyc
+│   │   ├── wsgi.cpython-310.pyc
+│   │   └── wsgi.cpython-39.pyc
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── frontend
+│   ├── admin.py
+│   ├── apps.py
+│   ├── babel.config.json
+│   ├── __init__.py
+│   ├── jsconfig.json
+│   ├── migrations
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       └── __init__.cpython-310.pyc
+│   ├── models.py
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── __pycache__
+│   │   ├── admin.cpython-310.pyc
+│   │   ├── apps.cpython-310.pyc
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── models.cpython-310.pyc
+│   │   ├── urls.cpython-310.pyc
+│   │   └── views.cpython-310.pyc
+│   ├── src
+│   │   ├── api
+│   │   │   ├── ajax.js
+│   │   │   ├── auth.js
+│   │   │   └── hotels.js
+│   │   ├── app
+│   │   │   ├── auth-slice.js
+│   │   │   ├── hotel-slice.js
+│   │   │   └── store.js
+│   │   ├── App.css
+│   │   ├── App.js
+│   │   ├── components
+│   │   │   ├── auth
+│   │   │   │   ├── LoginForm.js
+│   │   │   │   ├── Login.js
+│   │   │   │   ├── RegisterForm.js
+│   │   │   │   └── Register.js
+│   │   │   ├── common
+│   │   │   │   ├── Amenities.js
+│   │   │   │   └── Dropdown.js
+│   │   │   ├── layout
+│   │   │   │   ├── Account.js
+│   │   │   │   ├── AppLayout.js
+│   │   │   │   ├── BookingLayout.js
+│   │   │   │   ├── Dasboardsidenavbar.js
+│   │   │   │   ├── Iconify.js
+│   │   │   │   ├── Logo.js
+│   │   │   │   ├── NavConfig.js
+│   │   │   │   ├── NavSection.js
+│   │   │   │   ├── Roomcard.js
+│   │   │   │   ├── Scrollbar.js
+│   │   │   │   └── useResponsive.js
+│   │   │   └── Page.js
+│   │   ├── hooks
+│   │   │   ├── use-notification.js
+│   │   │   └── use-responsive.js
+│   │   ├── index.css
+│   │   ├── index.js
+│   │   ├── logo.svg
+│   │   ├── pages
+│   │   │   ├── addhotel
+│   │   │   │   ├── amenitiescard.js
+│   │   │   │   └── index.js
+│   │   │   ├── booking
+│   │   │   │   ├── Listing
+│   │   │   │   │   ├── HotelCard.js
+│   │   │   │   │   └── index.js
+│   │   │   │   ├── MyBookings
+│   │   │   │   │   └── index.js
+│   │   │   │   └── New
+│   │   │   │       ├── index.js
+│   │   │   │       └── reducer.js
+│   │   │   ├── myhotels
+│   │   │   │   ├── managebookings
+│   │   │   │   │   ├── Checkingmodal.js
+│   │   │   │   │   ├── Hotelbookings.js
+│   │   │   │   │   └── index.js
+│   │   │   │   └── managehotel
+│   │   │   │       ├── Hoteleditmodal.js
+│   │   │   │       ├── Hotel.js
+│   │   │   │       └── index.js
+│   │   │   └── Profile
+│   │   │       ├── editform.js
+│   │   │       ├── index.js
+│   │   │       └── profilecard.js
+│   │   ├── reportWebVitals.js
+│   │   ├── setupTests.js
+│   │   └── theme
+│   │       ├── index.js
+│   │       ├── overrides
+│   │       │   ├── Autocomplete.js
+│   │       │   ├── Backdrop.js
+│   │       │   ├── Button.js
+│   │       │   ├── Card.js
+│   │       │   ├── CssBaseline.js
+│   │       │   ├── IconButton.js
+│   │       │   ├── index.js
+│   │       │   ├── Input.js
+│   │       │   ├── Lists.js
+│   │       │   ├── Paper.js
+│   │       │   ├── Tooltip.js
+│   │       │   └── Typography.js
+│   │       ├── palette.js
+│   │       ├── shadows.js
+│   │       └── typography.js
+│   ├── static
+│   │   ├── css
+│   │   ├── icons
+│   │   │   ├── ic_flag_de.svg
+│   │   │   ├── ic_flag_en.svg
+│   │   │   ├── ic_flag_fr.svg
+│   │   │   ├── ic_notification_chat.svg
+│   │   │   ├── ic_notification_mail.svg
+│   │   │   ├── ic_notification_package.svg
+│   │   │   ├── ic_notification_shipping.svg
+│   │   │   └── shape-avatar.svg
+│   │   ├── illustrations
+│   │   │   ├── illustration_404.svg
+│   │   │   ├── illustration_avatar.png
+│   │   │   ├── illustration_login.png
+│   │   │   └── illustration_register.png
+│   │   ├── images
+│   │   ├── logo.svg
+│   │   ├── mock-images
+│   │   │   ├── avatars
+│   │   │   │   ├── avatar_10.jpg
+│   │   │   │   ├── avatar_11.jpg
+│   │   │   │   ├── avatar_12.jpg
+│   │   │   │   ├── avatar_13.jpg
+│   │   │   │   ├── avatar_14.jpg
+│   │   │   │   ├── avatar_15.jpg
+│   │   │   │   ├── avatar_16.jpg
+│   │   │   │   ├── avatar_17.jpg
+│   │   │   │   ├── avatar_18.jpg
+│   │   │   │   ├── avatar_19.jpg
+│   │   │   │   ├── avatar_1.jpg
+│   │   │   │   ├── avatar_20.jpg
+│   │   │   │   ├── avatar_21.jpg
+│   │   │   │   ├── avatar_22.jpg
+│   │   │   │   ├── avatar_23.jpg
+│   │   │   │   ├── avatar_24.jpg
+│   │   │   │   ├── avatar_2.jpg
+│   │   │   │   ├── avatar_3.jpg
+│   │   │   │   ├── avatar_4.jpg
+│   │   │   │   ├── avatar_5.jpg
+│   │   │   │   ├── avatar_6.jpg
+│   │   │   │   ├── avatar_7.jpg
+│   │   │   │   ├── avatar_8.jpg
+│   │   │   │   ├── avatar_9.jpg
+│   │   │   │   └── avatar_default.jpg
+│   │   │   ├── covers
+│   │   │   │   ├── cover_10.jpg
+│   │   │   │   ├── cover_11.jpg
+│   │   │   │   ├── cover_12.jpg
+│   │   │   │   ├── cover_13.jpg
+│   │   │   │   ├── cover_14.jpg
+│   │   │   │   ├── cover_15.jpg
+│   │   │   │   ├── cover_16.jpg
+│   │   │   │   ├── cover_17.jpg
+│   │   │   │   ├── cover_18.jpg
+│   │   │   │   ├── cover_19.jpg
+│   │   │   │   ├── cover_1.jpg
+│   │   │   │   ├── cover_20.jpg
+│   │   │   │   ├── cover_21.jpg
+│   │   │   │   ├── cover_22.jpg
+│   │   │   │   ├── cover_23.jpg
+│   │   │   │   ├── cover_24.jpg
+│   │   │   │   ├── cover_2.jpg
+│   │   │   │   ├── cover_3.jpg
+│   │   │   │   ├── cover_4.jpg
+│   │   │   │   ├── cover_5.jpg
+│   │   │   │   ├── cover_6.jpg
+│   │   │   │   ├── cover_7.jpg
+│   │   │   │   ├── cover_8.jpg
+│   │   │   │   └── cover_9.jpg
+│   │   │   └── products
+│   │   │       ├── product_10.jpg
+│   │   │       ├── product_11.jpg
+│   │   │       ├── product_12.jpg
+│   │   │       ├── product_13.jpg
+│   │   │       ├── product_14.jpg
+│   │   │       ├── product_15.jpg
+│   │   │       ├── product_16.jpg
+│   │   │       ├── product_17.jpg
+│   │   │       ├── product_18.jpg
+│   │   │       ├── product_19.jpg
+│   │   │       ├── product_1.jpg
+│   │   │       ├── product_20.jpg
+│   │   │       ├── product_21.jpg
+│   │   │       ├── product_22.jpg
+│   │   │       ├── product_23.jpg
+│   │   │       ├── product_24.jpg
+│   │   │       ├── product_2.jpg
+│   │   │       ├── product_3.jpg
+│   │   │       ├── product_4.jpg
+│   │   │       ├── product_5.jpg
+│   │   │       ├── product_6.jpg
+│   │   │       ├── product_7.jpg
+│   │   │       ├── product_8.jpg
+│   │   │       └── product_9.jpg
+│   │   └── preview.jpg
+│   ├── templates
+│   │   └── frontend
+│   │       └── index.html
+│   ├── tests.py
+│   ├── urls.py
+│   ├── views.py
+│   ├── webpack.config.js
+│   └── yarn.lock
+├── hotelbooking
+│   ├── admin.py
+│   ├── apps.py
+│   ├── __init__.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_user_adress.py
+│   │   ├── 0003_user_created_at.py
+│   │   ├── 0004_alter_user_created_at.py
+│   │   ├── 0005_alter_user_email.py
+│   │   ├── 0006_rename_adress_user_address.py
+│   │   ├── 0007_location_room_hotel_booking.py
+│   │   ├── 0008_remove_user_address.py
+│   │   ├── 0009_user_name_user_picture.py
+│   │   ├── 0010_remove_user_name.py
+│   │   ├── 0011_amenities.py
+│   │   ├── 0012_remove_amenities_hotel_hotel_amenities.py
+│   │   ├── 0013_remove_hotel_amenities_amenities_hotel.py
+│   │   ├── 0014_remove_amenities_hotel_amenities_icon_and_more.py
+│   │   ├── 0015_image.py
+│   │   ├── 0016_rename_amount_booking_total_amount_and_more.py
+│   │   ├── 0017_booking_hotel_name.py
+│   │   ├── 0018_remove_booking_hotel_name.py
+│   │   ├── 0019_booking_hotel_name.py
+│   │   ├── 0020_alter_booking_check_in_time_and_more.py
+│   │   ├── 0021_rename_hotel_name_booking_hotel_id.py
+│   │   ├── 0022_alter_booking_from_date_alter_booking_to_date.py
+│   │   ├── 0023_alter_booking_from_date_alter_booking_to_date.py
+│   │   ├── 0024_alter_booking_from_date_alter_booking_to_date.py
+│   │   ├── 0025_alter_user_picture.py
+│   │   ├── 0026_manager.py
+│   │   ├── 0027_alter_manager_password.py
+│   │   ├── 0028_remove_manager_created_at_remove_manager_picture.py
+│   │   ├── 0029_manager_last_login.py
+│   │   ├── 0030_delete_manager_user_is_manager.py
+│   │   ├── 0031_booking_created_at.py
+│   │   ├── 0032_alter_booking_created_at.py
+│   │   ├── 0033_alter_hotel_address.py
+│   │   ├── 0034_alter_hotel_address.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-310.pyc
+│   │       ├── 0001_initial.cpython-39.pyc
+│   │       ├── 0002_user_adress.cpython-310.pyc
+│   │       ├── 0002_user_adress.cpython-39.pyc
+│   │       ├── 0003_user_created_at.cpython-310.pyc
+│   │       ├── 0003_user_created_at.cpython-39.pyc
+│   │       ├── 0004_alter_user_created_at.cpython-310.pyc
+│   │       ├── 0004_alter_user_created_at.cpython-39.pyc
+│   │       ├── 0005_alter_user_email.cpython-310.pyc
+│   │       ├── 0005_alter_user_email.cpython-39.pyc
+│   │       ├── 0006_rename_adress_user_address.cpython-310.pyc
+│   │       ├── 0006_rename_adress_user_address.cpython-39.pyc
+│   │       ├── 0007_location_room_hotel_booking.cpython-310.pyc
+│   │       ├── 0008_remove_user_address.cpython-310.pyc
+│   │       ├── 0009_user_name_user_picture.cpython-310.pyc
+│   │       ├── 0010_remove_user_name.cpython-310.pyc
+│   │       ├── 0011_amenities.cpython-310.pyc
+│   │       ├── 0012_remove_amenities_hotel_hotel_amenities.cpython-310.pyc
+│   │       ├── 0013_remove_hotel_amenities_amenities_hotel.cpython-310.pyc
+│   │       ├── 0014_remove_amenities_hotel_amenities_icon_and_more.cpython-310.pyc
+│   │       ├── 0015_image.cpython-310.pyc
+│   │       ├── 0016_remove_hotel_image_booking_guest_room_room_count_and_more.cpython-310.pyc
+│   │       ├── 0016_rename_amount_booking_total_amount_and_more.cpython-310.pyc
+│   │       ├── 0017_alter_room_room_count.cpython-310.pyc
+│   │       ├── 0017_booking_hotel_name.cpython-310.pyc
+│   │       ├── 0018_remove_booking_hotel_name.cpython-310.pyc
+│   │       ├── 0018_rename_guest_booking_guest_name_booking_guest_count_and_more.cpython-310.pyc
+│   │       ├── 0019_booking_hotel_name.cpython-310.pyc
+│   │       ├── 0019_rename_room_count_room_total_rooms_and_more.cpython-310.pyc
+│   │       ├── 0020_alter_booking_check_in_time_and_more.cpython-310.pyc
+│   │       ├── 0020_booking_check_in_booking_check_out_and_more.cpython-310.pyc
+│   │       ├── 0021_remove_room_avilable_rooms_remove_room_total_rooms_and_more.cpython-310.pyc
+│   │       ├── 0021_rename_hotel_name_booking_hotel_id.cpython-310.pyc
+│   │       ├── 0022_alter_booking_check_in_alter_booking_check_out.cpython-310.pyc
+│   │       ├── 0022_alter_booking_from_date_alter_booking_to_date.cpython-310.pyc
+│   │       ├── 0023_alter_booking_check_in_alter_booking_check_out.cpython-310.pyc
+│   │       ├── 0023_alter_booking_from_date_alter_booking_to_date.cpython-310.pyc
+│   │       ├── 0024_alter_booking_check_in_alter_booking_check_out.cpython-310.pyc
+│   │       ├── 0024_alter_booking_from_date_alter_booking_to_date.cpython-310.pyc
+│   │       ├── 0025_alter_booking_check_in_alter_booking_check_out.cpython-310.pyc
+│   │       ├── 0025_alter_user_picture.cpython-310.pyc
+│   │       ├── 0026_alter_booking_check_in_alter_booking_check_out.cpython-310.pyc
+│   │       ├── 0026_manager.cpython-310.pyc
+│   │       ├── 0026_manager_user_is_manager.cpython-310.pyc
+│   │       ├── 0026_user_is_manager.cpython-310.pyc
+│   │       ├── 0027_alter_booking_check_in_alter_booking_check_out.cpython-310.pyc
+│   │       ├── 0027_alter_manager_password.cpython-310.pyc
+│   │       ├── 0027_manager.cpython-310.pyc
+│   │       ├── 0028_remove_manager_created_at_remove_manager_picture.cpython-310.pyc
+│   │       ├── 0028_rename_guest_name_booking_booked_by_and_more.cpython-310.pyc
+│   │       ├── 0029_manager_last_login.cpython-310.pyc
+│   │       ├── 0030_delete_manager_user_is_manager.cpython-310.pyc
+│   │       ├── 0031_alter_location_id.cpython-310.pyc
+│   │       ├── 0031_booking_created_at.cpython-310.pyc
+│   │       ├── 0032_alter_booking_created_at.cpython-310.pyc
+│   │       ├── 0032_rename_id_location_address_id.cpython-310.pyc
+│   │       ├── 0033_alter_hotel_address.cpython-310.pyc
+│   │       ├── 0034_alter_hotel_address.cpython-310.pyc
+│   │       ├── __init__.cpython-310.pyc
+│   │       └── __init__.cpython-39.pyc
+│   ├── models.py
+│   ├── __pycache__
+│   │   ├── admin.cpython-310.pyc
+│   │   ├── admin.cpython-39.pyc
+│   │   ├── apps.cpython-310.pyc
+│   │   ├── apps.cpython-39.pyc
+│   │   ├── backend.cpython-310.pyc
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── __init__.cpython-39.pyc
+│   │   ├── models.cpython-310.pyc
+│   │   ├── models.cpython-39.pyc
+│   │   ├── serializers.cpython-310.pyc
+│   │   ├── serializers.cpython-39.pyc
+│   │   ├── urls.cpython-310.pyc
+│   │   ├── urls.cpython-39.pyc
+│   │   ├── views.cpython-310.pyc
+│   │   └── views.cpython-39.pyc
+│   ├── serializers.py
+│   ├── static
+│   │   └── hotelbooking
+│   │       └── style.css
+│   ├── templates
+│   │   └── hotelbooking
+│   │       ├── index.html
+│   │       ├── layout.html
+│   │       ├── login.html
+│   │       └── register.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── manage.py
+├── Procfile
+├── README.md
+├── requirements.txt
+├── runtime.txt
+├── struct.txt
+├── uploads
+│   ├── 100_alok-min_2.jpeg
+│   ├── 100_alok-min_2_wTGHSih.jpeg
+│   ├── atulyadav_2CS9I9K.jpg
+│   ├── atulyadav_AJochrx.jpg
+│   ├── atulyadav_ETxiunE.jpg
+│   ├── atulyadav_hGGdK11.jpg
+│   ├── atulyadav.jpg
+│   ├── atulyadav_XhgfBin.jpg
+│   ├── atulyadav_ZYsTu52.jpg
+│   ├── edvin-johansson-rlwE8f8anOc-unsplash.jpg
+│   ├── images
+│   │   ├── atulyadav.jpg
+│   │   ├── ciudad-maderas-MXbM1NrRqtI-unsplash_EpOLgYk.jpg
+│   │   ├── ciudad-maderas-MXbM1NrRqtI-unsplash_FnCZbfP.jpg
+│   │   ├── ciudad-maderas-MXbM1NrRqtI-unsplash_h5328v3.jpg
+│   │   ├── ciudad-maderas-MXbM1NrRqtI-unsplash.jpg
+│   │   ├── ciudad-maderas-MXbM1NrRqtI-unsplash_tZ4yNMQ.jpg
+│   │   ├── ciudad-maderas-MXbM1NrRqtI-unsplash_uTDkhKY.jpg
+│   │   ├── ciudad-maderas-MXbM1NrRqtI-unsplash_xAHbN9y.jpg
+│   │   ├── ciudad-maderas-MXbM1NrRqtI-unsplash_ybgBVX9.jpg
+│   │   ├── edvin-johansson-rlwE8f8anOc-unsplash_2qRrPRC.jpg
+│   │   ├── edvin-johansson-rlwE8f8anOc-unsplash_543I8Ac.jpg
+│   │   ├── edvin-johansson-rlwE8f8anOc-unsplash_7UAy7oH.jpg
+│   │   ├── edvin-johansson-rlwE8f8anOc-unsplash_Eh3FVxY.jpg
+│   │   ├── edvin-johansson-rlwE8f8anOc-unsplash_h8t5vfQ.jpg
+│   │   ├── edvin-johansson-rlwE8f8anOc-unsplash_HiJJ8SB.jpg
+│   │   ├── edvin-johansson-rlwE8f8anOc-unsplash_jEzcXRe.jpg
+│   │   ├── edvin-johansson-rlwE8f8anOc-unsplash_JGnr5be.jpg
+│   │   ├── edvin-johansson-rlwE8f8anOc-unsplash.jpg
+│   │   ├── edvin-johansson-rlwE8f8anOc-unsplash_ntwWLuc.jpg
+│   │   ├── edvin-johansson-rlwE8f8anOc-unsplash_Un1dfqG.jpg
+│   │   ├── edvin-johansson-rlwE8f8anOc-unsplash_usOtRSL.jpg
+│   │   ├── edvin-johansson-rlwE8f8anOc-unsplash_yj5jSjl.jpg
+│   │   ├── erick-palacio-_B9J6abAHPA-unsplash.jpg
+│   │   ├── fernando-alvarez-rodriguez-M7GddPqJowg-unsplash.jpg
+│   │   ├── GettyImages-1207490255-e1615485559611_4WyxWwf.jpg
+│   │   ├── GettyImages-1207490255-e1615485559611_5AVYMGQ.jpg
+│   │   ├── GettyImages-1207490255-e1615485559611.jpg
+│   │   ├── GettyImages-1207490255-e1615485559611_pIkFjDP.jpg
+│   │   ├── GettyImages-1207490255-e1615485559611_t0VdV6K.jpg
+│   │   ├── hotel-rooms-8146308_d9NmQU1.jpg
+│   │   ├── hotel-rooms-8146308_dF2uV8J.jpg
+│   │   ├── hotel-rooms-8146308.jpg
+│   │   ├── hotel-rooms-8146308_n6k0oW1.jpg
+│   │   ├── hotel-rooms-8146308_paAqaiF.jpg
+│   │   ├── hotel-rooms-8146308_vJfwo8o.jpg
+│   │   ├── j-shim-6dFW8PJwt0s-unsplash.jpg
+│   │   ├── pranav-kumar-jain-pHcLOc_RzQ0-unsplash.jpg
+│   │   ├── pranav-kumar-jain-pHcLOc_RzQ0-unsplash_rSbYifC.jpg
+│   │   ├── ralph-ravi-kayden-FqqiAvJejto-unsplash.jpg
+│   │   ├── reagan-m-d-eWGvLCZfQ-unsplash.jpg
+│   │   ├── redcharlie-og0qDovf2Ns-unsplash.jpg
+│   │   ├── roberto-nickson-MA82mPIZeGI-unsplash.jpg
+│   │   ├── sara-dubler-Koei_7yYtIo-unsplash.jpg
+│   │   ├── stephen-leonardi-XKIO6ZgCObo-unsplash_3afUcHA.jpg
+│   │   ├── stephen-leonardi-XKIO6ZgCObo-unsplash_eccNL1w.jpg
+│   │   ├── stephen-leonardi-XKIO6ZgCObo-unsplash_eOnlrvh.jpg
+│   │   ├── stephen-leonardi-XKIO6ZgCObo-unsplash_etxdWec.jpg
+│   │   ├── stephen-leonardi-XKIO6ZgCObo-unsplash_FxMkEZQ.jpg
+│   │   ├── stephen-leonardi-XKIO6ZgCObo-unsplash_iOfhBeO.jpg
+│   │   ├── stephen-leonardi-XKIO6ZgCObo-unsplash.jpg
+│   │   ├── stephen-leonardi-XKIO6ZgCObo-unsplash_l9jKpcp.jpg
+│   │   ├── stephen-leonardi-XKIO6ZgCObo-unsplash_LUlJSSR.jpg
+│   │   ├── stephen-leonardi-XKIO6ZgCObo-unsplash_LZIG449.jpg
+│   │   ├── stephen-leonardi-XKIO6ZgCObo-unsplash_qV2g9aw.jpg
+│   │   ├── stephen-leonardi-XKIO6ZgCObo-unsplash_VGGpVmD.jpg
+│   │   ├── stephen-leonardi-XKIO6ZgCObo-unsplash_wpvsolk.jpg
+│   │   ├── stephen-leonardi-XKIO6ZgCObo-unsplash_Yps9fyi.jpg
+│   │   ├── valeriia-bugaiova-_pPHgeHz1uk-unsplash.jpg
+│   │   ├── visualsofdana-T5pL6ciEn-I-unsplash_egxlGYw.jpg
+│   │   ├── visualsofdana-T5pL6ciEn-I-unsplash.jpg
+│   │   ├── vojtech-bruzek-Yrxr3bsPdS0-unsplash_CpFRQhY.jpg
+│   │   ├── vojtech-bruzek-Yrxr3bsPdS0-unsplash_Hi6l0xU.jpg
+│   │   ├── vojtech-bruzek-Yrxr3bsPdS0-unsplash_j6FTPsR.jpg
+│   │   ├── vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg
+│   │   ├── vojtech-bruzek-Yrxr3bsPdS0-unsplash_Ui97k41.jpg
+│   │   └── vojtech-bruzek-Yrxr3bsPdS0-unsplash_uzPBUGa.jpg
+│   ├── mts.jpg
+│   ├── WhatsApp_Image_2022-01-16_at_7.48.13_PM_3_iiPECsr.jpeg
+│   ├── WhatsApp_Image_2022-01-16_at_7.48.13_PM_3.jpeg
+│   ├── WhatsApp_Image_2022-01-16_at_7.48.13_PM_3_qcfgJlz.jpeg
+│   ├── WhatsApp_Image_2022-01-16_at_7.48.13_PM_3_uwtqh8f.jpeg
+│   ├── WhatsApp_Image_2022-01-16_at_7.48.13_PM_3_xvpOWSn.jpeg
+│   ├── WhatsApp_Image_2022-02-17_at_11._c239k1o.jpg
+│   ├── WhatsApp_Image_2022-02-17_at_11..jpg
+│   ├── WhatsApp_Image_2022-02-17_at_11._LicIBsI.jpg
+│   ├── WhatsApp_Image_2022-02-17_at_11._MV2YU3L.jpg
+│   └── WhatsApp_Image_2022-02-17_at_11._t5C1LQA.jpg
+└── workflow.md
+
+47 directories, 406 files

@@ -5,7 +5,7 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "./static/frontend"),
-    filename: 'main.js'
+    filename: "main.js",
   },
   resolve: {
     alias: {
@@ -42,6 +42,7 @@ module.exports = {
       },
     ],
   },
+  
   optimization: {
     minimize: false,
     chunkIds: 'named',
@@ -54,4 +55,7 @@ module.exports = {
       },
     }),
   ],
+  devServer: {
+    historyApiFallback: true
+  }
 };

@@ -14,8 +14,12 @@ RUN pip install -r requirements.txt
 # copy project
 COPY . /app
 RUN cd /app/frontend && npm install --legacy-peer-deps
+
 ENV NODE_ENV production
+
 RUN cd /app/frontend && npm run build
+RUN python manage.py collectstatic 
+
 EXPOSE 8000
 
 CMD ["gunicorn", "finalproject.wsgi", "-b", "0.0.0.0", "--access-logfile", "-"]

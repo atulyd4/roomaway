@@ -36,12 +36,13 @@ ALLOWED_HOSTS = [
     "192.168.1.11",
     "web-production-0dc7.up.railway.app",
 ]
-CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
+# for react app
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://0.0.0.0:3000"]
+
 CORS_ALLOW_METHODS = list(default_methods)
 APPEND_SLASH = False
 
 debug = True if os.environ.get("DEBUG", False) == "True" else False
-# print('debug : ' + str(debug) )
 DEBUG = debug
 
 # Application definition
@@ -73,8 +74,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://web-production-0dc7.up.railway.app"]
-CSRF_COOKIE_DOMAIN = ["https://web-production-0dc7.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["http://0.0.0.0", "https://web-production-0dc7.up.railway.app"]
+CSRF_COOKIE_DOMAIN = ["http://0.0.0.0", "https://web-production-0dc7.up.railway.app"]
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 AUTH_USER_MODEL = "hotelbooking.User"
@@ -87,11 +88,12 @@ REST_FRAMEWORK = {
     "NON_FIELD_ERRORS_KEY": "some errors key",
 }
 
-STATIC_URL = "/static/"
+
+STATIC_URL = "static/"
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "frontend", "static", "frontend"),
-    os.path.join(BASE_DIR, "frontend", "static"),
+    os.path.join(BASE_DIR, "frontend", "static", "frontend"),
     os.path.join(BASE_DIR, "uploads"),
 ]
 
@@ -191,13 +193,5 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.0/howto/static-files/
-
-STATIC_URL = "static/"
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
