@@ -202,24 +202,22 @@ In terms of complexity, I used Django with more than one model (explained below)
 1.initialize virtual environment and activate it
 ```bash
 python3 -m venv .venv
-
 source .venv/bin/activate
 ```
 2.Install dependencies
 ```bash
 pip install -r requirements.txt
-
 ```
 ## Run
 For Backend
 ```bash
 python3 manage.py migrate
-python3 manage.py runserver
+DEBUG=True python3 manage.py runserver
 ```
 For Frontend
 
 ```bash
-cd frontend && npm install
-# then run
+cd frontend 
+npm install
 npm run dev
 ``
