@@ -1,6 +1,4 @@
-import {
-  Alert, Box, Button, Grid, TextField,
-} from '@mui/material';
+import { Alert, Box, Button, Grid, TextField, useMediaQuery, useTheme } from '@mui/material';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
@@ -13,6 +11,8 @@ function Login() {
   const [errors, setErrors] = useState({});
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
 
   const onSubmit = () => {
     apiLogin({ username, password })
@@ -34,10 +34,9 @@ function Login() {
   };
 
   return (
-
     <Grid container justifyContent="center" direction="column" style={{ marginTop: 20 }}>
-      <form style={{ alignSelf: 'center' }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', width: 500 }}>
+      <form style={{ alignSelf: 'center', width: '100%' }}>
+        <Box  sx={{ display: 'flex', flexDirection: 'column', width: matches ? 500 : 'auto' }} >
           <TextField
             fullWidth
             size="large"

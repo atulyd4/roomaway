@@ -4,10 +4,12 @@ import {
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { addhotel } from 'src/api/hotels';
+import useResponsive from 'src/components/layout/useResponsive';
 import useNotification from 'src/hooks/use-notification';
 import MultipleSelectCheckmarks from './amenitiescard';
 
 function Hotelform() {
+  const isMobile = useResponsive('down', 'sm');
   const [hotelname, setHotelname] = useState('');
   const [addressone, setAddressone] = useState('');
   const [addresstwo, setAddresstwo] = useState('');
@@ -71,7 +73,7 @@ function Hotelform() {
       <h2>Add Your Hotel</h2>
       <form style={{ alignSelf: 'center' }}>
         <Box sx={{
-          display: 'flex', flexDirection: 'column', width: 700, marginTop: 10,
+          display: 'flex', flexDirection: 'column', width:isMobile?'100%':  700, marginTop: 10,
         }}
         >
 

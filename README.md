@@ -6,13 +6,13 @@ Project video link : https://youtu.be/HJEfqBdw3qA
 
 This project concentrates on building a website for a hotel. The website is based on Django, CSS and javascript,React js,React-Redux. It focuses on giving the costumer all the information about the hotel and its services. The website gives details of rooms with pictures .
 
-During the past several decades Hotel function and information has been transformed from a relatively obscure printed banners and manual customer service to central and top-level management functional web application-based system. There are many factors that have influenced this transformation like technological advances, professionalism, and general recognition of human beings as most important resources.
-
 A computer-based management system is designed to handle all the primary information required to display room information etc. A list of all the services and amenities are some of the things that attract the user/customer. This project intends to introduce more user friendliness in the various activities such as searching for hotel, booking a room .
 
 ## Main idea
 I created a  web application Roomaway for Adding hotel as well as mangehotel and user can book hotel rooms.
- The main components are:
+web application(Roomaway) is Mobile responsive.
+
+ How it works:
 
 * 1. If anyone who register and login as a manager can add his Hotel and also he can manage his hotel.
 * Register and Login as a manager :

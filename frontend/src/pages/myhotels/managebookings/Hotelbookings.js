@@ -3,12 +3,14 @@ import {
   Box, Button, Card, CardContent, CardMedia, Typography,
 } from '@mui/material';
 import moment from 'moment';
+import useResponsive from 'src/components/layout/useResponsive';
 
 function MyHotelBookings({ booking, onBookingClick }) {
+  const isMobile = useResponsive('down', 'sm');
   return (
     <Card
       sx={{
-        display: 'flex', height: 300, marginTop: 5, padding: 5,
+        display: 'flex',flexDirection:isMobile ? 'column':'row', height:isMobile ? 'auto': 300, marginTop:isMobile?1: 5, padding:isMobile?1: 5,
       }}
       elevation={0}
       square
@@ -16,15 +18,15 @@ function MyHotelBookings({ booking, onBookingClick }) {
 
       <CardMedia
         component="img"
-        sx={{ width: 200 }}
+        sx={{ height:isMobile ? '100%':'auto', width:isMobile?'100%':  200}}
         image={booking?.hotel_id.photos[0]}
         alt="Live from space album cover"
       />
-      <Box sx={{
-        display: 'flex', justifyContent: 'space-evenly', flexDirection: 'row', textAlign: 'start',
+      <Box  sx={{
+        display:'flex', justifyContent: 'space-evenly', flexDirection:isMobile ? 'column':'row', textAlign: 'start',padding:isMobile?'35px':0
       }}
       >
-        <CardContent>
+        <Box padding={isMobile?0:'24px'}>
           <Typography component="div" variant="h4" paddingBottom="10px">
             {`Username : ${booking?.booked_by.username}`}
           </Typography>
@@ -43,8 +45,8 @@ function MyHotelBookings({ booking, onBookingClick }) {
             {`Total Paid Amount: ₹ ${booking.total_amount}`}
           </Typography>
 
-        </CardContent>
-        <Box marginTop="22px">
+        </Box>
+        <Box marginTop="22px" marginBottom={isMobile?'10px':0}>
           <h3>bookig details</h3>
           <Typography marginTop={1}>
             {`Booking id : ${booking.id}`}

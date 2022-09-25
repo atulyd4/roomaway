@@ -1,12 +1,16 @@
 import {
-  Button, Grid, Stack, TextField, Box, Checkbox,
+  Button, Grid, Stack, TextField, Box, Checkbox, useMediaQuery,
 } from '@mui/material';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { register } from 'src/api/auth';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import { useTheme } from '@emotion/react';
 
 function Register() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
+
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
   const [username, setUsername] = useState('');
@@ -53,8 +57,8 @@ function Register() {
 
   return (
     <Grid container justifyContent="center" direction="column" style={{ marginTop: 20 }}>
-      <form style={{ alignSelf: 'center' }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', width: 500 }}>
+      <form style={{ alignSelf: 'center',width:'100%' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', width:matches ? 500 : 'auto' }}>
           <Stack direction={{ xs: 'column', sm: 'row' }} style={{ width: '100%' }} spacing={2}>
             <TextField
               fullWidth

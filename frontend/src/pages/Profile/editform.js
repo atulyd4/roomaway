@@ -5,8 +5,10 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editprofile } from 'src/api/hotels';
 import { updateUser } from 'src/app/auth-slice';
+import useResponsive from 'src/components/layout/useResponsive';
 
 function Editform({ user, cancelEdit }) {
+  const isMobile = useResponsive('down', 'sm');
   const initialState = {
     username: user.username,
     firstname: user.first_name,
@@ -49,7 +51,7 @@ function Editform({ user, cancelEdit }) {
   return (
     <Grid container justifyContent="center" direction="column" style={{ marginTop: 20 }}>
       <form style={{ alignSelf: 'center' }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', width: 500 }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', width:isMobile?'100%': 500 }}>
           <TextField
             error={errors && Object.keys(errors).includes('email')}
             helperText={errors && Object.keys(errors).includes('email') ? errors.email?.join('\n') : ''}

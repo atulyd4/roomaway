@@ -6,14 +6,18 @@ import { Link as RouterLink, useLocation } from 'react-router-dom';
 // material
 import { styled } from '@mui/material/styles';
 import {
-  Box, Link, Drawer, Typography, Avatar,
+  Box, Link, Drawer, Typography, Avatar, IconButton, AppBar,
 } from '@mui/material';
 import useResponsive from './useResponsive';
+import Toolbar from '@mui/material/Toolbar';
+
 // components
 import Scrollbar from './Scrollbar';
 import NavSection from './NavSection';
 //
 import navConfig from './NavConfig';
+import MenuIcon from '@mui/icons-material/Menu';
+
 
 // ----------------------------------------------------------------------
 
@@ -36,7 +40,7 @@ const AccountStyle = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
+export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar, onOpen }) {
   const user = useSelector((state) => state.auth.user);
   const { pathname } = useLocation();
   const isDesktop = useResponsive('up', 'lg');
@@ -69,13 +73,29 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       </Box>
 
       <NavSection navConfig={navConfig} />
-
       <Box sx={{ flexGrow: 1 }} />
     </Scrollbar>
   );
 
   return (
     <RootStyle>
+      <AppBar position="fixed" open={open}>
+        <Toolbar>
+      <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={onOpen}
+            edge="start"
+            
+            
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" noWrap component="div">
+            Menu
+          </Typography>
+          </Toolbar>
+      </AppBar>
       {!isDesktop && (
         <Drawer
           open={isOpenSidebar}
@@ -85,8 +105,8 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
           }}
         >
           {renderContent}
+        
         </Drawer>
-
       )}
 
       {isDesktop && (
@@ -102,7 +122,6 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
           }}
         >
           {renderContent}
-
         </Drawer>
       )}
     </RootStyle>

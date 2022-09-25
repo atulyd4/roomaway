@@ -5,11 +5,13 @@ import { useNavigate } from 'react-router-dom';
 import { bookRoom, getHotels } from 'src/api/hotels';
 import { storeHotels } from 'src/app/hotel-slice';
 import SelectCityDropdown from 'src/components/common/Dropdown';
+import useResponsive from 'src/components/layout/useResponsive';
 import NewBookingModal from '../New';
 import { initialState, reducer } from '../New/reducer';
 import HotelCard from './HotelCard';
 
 function Listing() {
+  const isMobile = useResponsive('down', 'sm');
   const [showNewBooking, setShowNewBooking] = useState();
   const [selectedHotel, setSelectedHotel] = useState();
   const [city, setCity] = useState('');
@@ -69,7 +71,7 @@ function Listing() {
           onBookingConfirm={onBookingConfirm}
         />
       ) : null }
-      <Grid container width="100%">
+      <Grid container width="100%" marginTop={isMobile?'10px':0} marginLeft={isMobile?'10px':0}>
         <SelectCityDropdown hotels={hotels} city={city} setCity={setCity} />
         { city && <Button size="small" variant="" onClick={removeFilter}>Clear filter</Button>}
       </Grid>

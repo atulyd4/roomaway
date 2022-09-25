@@ -8,11 +8,13 @@ import {
   Alert,
   Box, Button, IconButton, Typography,
 } from '@mui/material';
+import useResponsive from './useResponsive';
 // import "./styles.css";
 
 export default function Roomcard({
   dispatch, availableRooms, state,
 }) {
+  const isMobile = useResponsive('down', 'sm');
   const [rooms, setRooms] = useState([]);
   if (availableRooms === 0) {
     <Alert severity="error">Rooms not available between selected dates</Alert>;
@@ -53,7 +55,7 @@ export default function Roomcard({
   };
 
   return (
-    <Box sx={{ width: 400, Height: 300 }}>
+    <Box sx={{ width:isMobile?'auto': 400, Height: 300 }}>
       <div className="App">
         {rooms.map((room, index) => (
           <div>

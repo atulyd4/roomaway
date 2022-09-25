@@ -6,8 +6,10 @@ import {
 // import Amenities from 'src/components/common/Amenities';
 import { getbookings } from 'src/api/hotels';
 import moment from 'moment';
+import useResponsive from 'src/components/layout/useResponsive';
 
 function MyBookings() {
+  const isMobile = useResponsive('down', 'sm');
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -38,7 +40,7 @@ function MyBookings() {
       {bookings.map((booking) => (
         <Card
           sx={{
-            display: 'flex', height: 300, marginTop: 5, padding: 5,
+            display: 'flex',flexDirection:isMobile?'column':'row', height:isMobile?'auto': 300, marginTop:isMobile?1: 5, padding:isMobile?1: 5,
           }}
           elevation={0}
           square
@@ -46,7 +48,7 @@ function MyBookings() {
 
           <CardMedia
             component="img"
-            sx={{ width: 200 }}
+            sx={{ width:isMobile?'auto': 200 }}
             image={booking?.hotel_id.photos[0]}
             alt="Live from space album cover"
           />

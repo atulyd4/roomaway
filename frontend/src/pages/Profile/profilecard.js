@@ -15,8 +15,10 @@ import { updatePhoto } from 'src/api/auth';
 import { useDispatch } from 'react-redux';
 import { updateUser } from 'src/app/auth-slice';
 import Editform from './editform';
+import useResponsive from 'src/components/layout/useResponsive';
 
 export default function ProfileCard({ user }) {
+  const isMobile = useResponsive('down', 'sm');
   const [editMode, setEditMode] = React.useState(false);
   const [uploading, setUploading] = React.useState(false);
   const dispatch = useDispatch();
@@ -41,15 +43,15 @@ export default function ProfileCard({ user }) {
 
   return (
     <Card sx={{
-      display: 'flex', justifyContent: 'center', textAlign: 'start', padding: 10,
+      display: 'flex',flexDirection:isMobile?'column':'row', justifyContent: 'center', textAlign: 'start', padding:isMobile?1: 10,
     }}
     >
-      <Box sx={{ marginLeft: 20 }}>
+      <Box sx={{ marginLeft:isMobile?0: 20 }}>
         <CardMedia
           component="img"
           height="350px"
           style={{
-            width: 250,
+            width:isMobile?'100%': 250,
             marginBottom: 20,
 
           }}

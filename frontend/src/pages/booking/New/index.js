@@ -12,10 +12,12 @@ import moment from 'moment';
 import CloseIcon from '@mui/icons-material/Close';
 import { getavailbility } from 'src/api/hotels';
 import Roomcard from 'src/components/layout/Roomcard';
+import useResponsive from 'src/components/layout/useResponsive';
 
 function NewBookingModal({
   hotel, onClose, state, dispatch, onBookingConfirm,
 }) {
+  const isMobile = useResponsive('down', 'sm');
   const [focusedInput, setFocusedInput] = useState(null);
   const [availableRooms, setAvailableRooms] = useState(0);
   const [guest, setGuest] = useState(0);
@@ -49,10 +51,10 @@ function NewBookingModal({
         ) : null}
       </DialogTitle>
       <DialogContent>
-        <Card sx={{ width: 800, overflow: 'visible' }} elevation={0}>
+        <Card sx={{ width:isMobile?'auto': 800, overflow: 'visible' }} elevation={0}>
           <CardMedia
             component="img"
-            height="400"
+            height={isMobile?'auto':400}
             image={hotel?.photos[0]}
             alt="green iguana"
           />

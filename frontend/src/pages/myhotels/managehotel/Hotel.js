@@ -6,30 +6,32 @@ import {
 import Carousel from 'react-material-ui-carousel';
 // import Amenities from 'src/components/common/Amenities';
 import Amenities from 'src/components/common/Amenities';
+import useResponsive from 'src/components/layout/useResponsive';
 
 function HotelTemplate({ hotel, onEditClick }) {
+  const isMobile = useResponsive('down', 'sm');
   return (
     <Card
       sx={{
-        display: 'flex', height: 420, marginTop: 5, padding: 5,
+        display: 'flex',flexDirection:isMobile?'column':'row' ,height:isMobile?'auto': 420, marginTop:isMobile?1: 5, padding:isMobile?1: 5,
       }}
       elevation={0}
       square
     >
-      <Carousel sx={{ width: 500 }}>
+      <Carousel sx={{ width:isMobile? 'auto':500 }}>
         {hotel?.photos?.map((res, index) => (
           <CardMedia
               // eslint-disable-next-line react/no-array-index-key
             key={index}
             component="img"
-            sx={{ width: 500 }}
+            sx={{ width:isMobile?'100%':  500 }}
             image={res}
             alt="Live from space album cover"
           />
         ))}
       </Carousel>
       <Box sx={{
-        display: 'flex', flex: 1, flexDirection: 'column', textAlign: 'start',
+        display: 'flex',  flexDirection: 'column', textAlign: 'start',
       }}
       >
         <CardContent sx={{ flex: 1 }}>

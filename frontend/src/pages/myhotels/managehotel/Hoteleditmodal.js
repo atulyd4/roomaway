@@ -13,10 +13,13 @@ import { useNavigate } from 'react-router-dom';
 import { editMyHotel } from 'src/api/hotels';
 import MultipleSelectCheckmarks from 'src/pages/addhotel/amenitiescard';
 import useNotification from 'src/hooks/use-notification';
+import useResponsive from 'src/components/layout/useResponsive';
 
 function EditModal({
   hotel, onClose,
 }) {
+  const isMobile = useResponsive('down', 'sm');
+
   const initialState = {
     name: hotel?.name,
     address_line_one: hotel?.address.address_line_one,
@@ -109,14 +112,14 @@ function EditModal({
         ) : null}
       </DialogTitle>
       <DialogContent>
-        <Card sx={{ width: 800, height: 'auto', overflow: 'visible' }} elevation={0}>
+        <Card sx={{ width:isMobile? '100%': 800, height: 'auto', overflow: 'visible' }} elevation={0}>
 
           <CardContent>
             <Grid container justifyContent="center" direction="column" style={{ marginTop: 20 }}>
               <h2>Update hotel details.. </h2>
               <form style={{ alignSelf: 'center' }}>
                 <Box sx={{
-                  display: 'flex', flexDirection: 'column', width: 700, marginTop: 10,
+                  display: 'flex', flexDirection: 'column', width:isMobile?'auto': 700, marginTop: 10,
                 }}
                 >
 

@@ -7,6 +7,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Select from '@mui/material/Select';
 import Checkbox from '@mui/material/Checkbox';
 import { getamenities } from 'src/api/hotels';
+import useResponsive from 'src/components/layout/useResponsive';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -20,6 +21,7 @@ const MenuProps = {
 };
 
 export default function MultipleSelectCheckmarks({ amenities, setAmenities }) {
+  const isMobile = useResponsive('down', 'sm');
   const [names, setNames] = useState([]);
   useEffect(() => {
     getamenities().then((response) => setNames(response));
@@ -36,7 +38,7 @@ export default function MultipleSelectCheckmarks({ amenities, setAmenities }) {
 
   return (
     <div>
-      <FormControl sx={{ width: 700, marginTop: 2 }}>
+      <FormControl sx={{ width:isMobile?'100%': 700, marginTop: 2 }}>
         <InputLabel id="demo-multiple-checkbox-label">Amenities</InputLabel>
         <Select
           labelId="demo-multiple-checkbox-label"
