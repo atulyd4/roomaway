@@ -1,42 +1,37 @@
-## Roomaway
+# Roomaway
 
 Project video link : https://youtu.be/HJEfqBdw3qA
 
 ## Introduction
+This project concentrates on building a webapp for a hotel. The webapp is based on Django, CSS and javascript, React js,React-Redux. It focuses on giving the customer all the information about the hotel and its services. The webapp gives details of rooms with pictures.
 
-This project concentrates on building a website for a hotel. The website is based on Django, CSS and javascript,React js,React-Redux. It focuses on giving the costumer all the information about the hotel and its services. The website gives details of rooms with pictures .
-
-A computer-based management system is designed to handle all the primary information required to display room information etc. A list of all the services and amenities are some of the things that attract the user/customer. This project intends to introduce more user friendliness in the various activities such as searching for hotel, booking a room .
+This webapp is designed to handle all the primary information required to display room information etc. A list of all the services and amenities are some of the things that attract the user/customer. This project intends to introduce more user-friendliness in the various activities such as searching for hotels, booking and rooms.
 
 ## Main idea
-I created a  web application Roomaway for Adding hotel as well as mangehotel and user can book hotel rooms.
-web application(Roomaway) is Mobile responsive.
+A web application for managing hotels and bookings for hotel managers.
 
- How it works:
+Giving users an easy-to-use mobile-first web application to search hotels and book rooms,  search based on different criteria ( city, amenities etc) and manage their bookings.
 
-* 1. If anyone who register and login as a manager can add his Hotel and also he can manage his hotel.
-* Register and Login as a manager :
-  
-   * Add hotel page : On this page You can fill
-   * hotel details and add your hotel.
-   * Manage hotel : On this page you can change any detail of your hotel.
-   * Manage booking: On manage booking page you will see all your hotel bookings with booking detail and here you can checkin and checkout to customer.
-   * Profile page :  you can change any details related to your profile .
+#### How it works:
 
-* 2. If anyone who register and login as a user can book hotels room .
-*  Register and Login as a user :
-   *  Listing page : on this page you will see all
-   *  hotels list and you can search by city .
-   *  On clicking Booknow botton you can book hotel room after filling detail.
+* As a hotel manager :
+   * Add hotel page: On this page You can fill hotel details and add your hotel.
+   * Manage hotel: On this page you can change any detail of your hotel.
+   * Manage bookings: On the manage booking page, you will see all your hotel bookings with booking detail and here you can check in and checkout to the customer.
+   * Profile page:  you can change any details related to your profile.
+
+*  As a user :
+   *  Listing page: on this page you will see all hotels list and you can search by city .
+   *  On clicking Booknow botton you can book hotel room after filling details.
    * My Booking page : On this page you will see
 your all bookings.
    * Profile page : You will see your detail also you can change any details related to your profile .
 
 
 ## Distinctiveness and Complexity
-The page is not similar to anything we have already created. It's not a social media app nor an e-commerce. It's not similar to other years projects either.
+It's a hotel booking and hotel management app where users can book and manage their bookings and hotel managers can manage hotels and bookings.
 
-In terms of complexity, I used Django with more than one model (explained below) and several javascript files(Reactjs) to the frontend.
+In terms of complexity, I used **Django** with more than one model (explained below) and with the javascript UI library **ReactJS** for the frontend.
 
 ## Files Information
 * In hotelbooking views.py there is all of the backend code. The main functions are:
@@ -52,10 +47,10 @@ In terms of complexity, I used Django with more than one model (explained below)
   
 * Models.py. The different models are:
   * User model 
-  * Location model for location detail of hotel
+  * Location model for location detail of the hotel
   * Amenities model for hotel amenities
   * Image model 
-  * Hotel model all the details for hotel
+  * Hotel model all the details for the hotel
   * Room model for hotels room detail
   * Booking model all the details for booking
 
@@ -74,7 +69,7 @@ In terms of complexity, I used Django with more than one model (explained below)
 │   ├── settings.py # main setting.py file
 │   ├── urls.py # urls for both apps
 │   └── wsgi.py
-├── frontend  # Frontend contains all the React codes
+├── frontend  # Frontend contains all the ReactJS codes
 │   ├── babel.config.json
 │   ├── __init__.py
 │   ├── jsconfig.json
@@ -87,7 +82,7 @@ In terms of complexity, I used Django with more than one model (explained below)
 │   │   │   ├── ajax.js # for headers and token verification
 │   │   │   ├── auth.js # urls for register and update profile
 │   │   │   └── hotels.js # all hotel related urls
-│   │   ├── app
+│   │   ├── app # Redux store
 │   │   │   ├── auth-slice.js   # User login and logout logic
 │   │   │   ├── hotel-slice.js  # hotel initial data and update data
 │   │   │   └── store.js  # it stores user and hotel details in localstorage 
@@ -192,19 +187,19 @@ In terms of complexity, I used Django with more than one model (explained below)
 ├── uploads
 ```
 
-## System Requirments
+## System Requirements
 ```bash
 1. Postgresql database
 2. windows / linux / mac with python3 installed
 ```
 ## Setup
 
-1.initialize virtual environment and activate it
+1. Initialize the virtual environment and activate it
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
-2.Install dependencies
+2. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
@@ -220,4 +215,4 @@ For Frontend
 cd frontend 
 npm install
 npm run dev
-``
+```
