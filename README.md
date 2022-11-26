@@ -13,10 +13,10 @@ The webapp is designed to handle all the basic management of hotels. Hotel manag
 #### How it works:
 The idea is simple, users can register either as manager or customer. During registration you need to enter these fields:
 
-Email
-Name
-Password
-Checkbox for what type of user you will be (manager or customer)
+- Email
+- Name
+- Password
+- Checkbox for what type of user you will be (manager or customer)
 
 after logging in as a customer, you will land on the "Listings" page, which will show all listed hotels on platform. customers can filter by city to narrow down their search. customers can click on hotel to see details, pricing and availability of rooms.
 
