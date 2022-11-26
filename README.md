@@ -3,24 +3,37 @@
 Project video link : https://youtu.be/HJEfqBdw3qA
 
 ## Introduction
-This project concentrates on building a webapp for a hotel. The webapp is based on Django, CSS and javascript, React js,React-Redux. It focuses on giving the customer all the information about the hotel and its services. The webapp gives details of rooms with pictures.
+The project is a webapp that allows hotel managers/owners to manage hotel and bookings also allows users to search for hotels and book rooms. I wanted to make a project like this to expand my knowledge of python's framework django and javascript .
+The webapp is based on Django, CSS and javascript, React js,React-Redux. It focuses on giving the customer all the information about the hotel and its services.
 
-This webapp is designed to handle all the primary information required to display room information etc. A list of all the services and amenities are some of the things that attract the user/customer. This project intends to introduce more user-friendliness in the various activities such as searching for hotels, booking and rooms.
 
 ## Main idea
-A web application for managing hotels and bookings for hotel managers.
-
-Giving users an easy-to-use mobile-first web application to search hotels and book rooms,  search based on different criteria ( city, amenities etc) and manage their bookings.
+The webapp is designed to handle all the basic management of hotels. Hotel managers can add edit and update hotel information, room information available amenities and manage bookings. and customers can search hotels based on location, book rooms and manage their bookings. 
 
 #### How it works:
+The idea is simple, users can register either as manager or customer. During registration you need to enter these fields:
 
-* As a hotel manager :
+Email
+Name
+Password
+Checkbox for what type of user you will be (manager or customer)
+
+after logging in as a customer, you will land on the "Listings" page, which will show all listed hotels on platform. customers can filter by city to narrow down their search. customers can click on hotel to see details, pricing and availability of rooms.
+
+customers can manage their bookings by visiting "My Bookings" page.
+
+For managers,  
+   - add hotel ( add new hotel )
+   - manage hotel ( update info, pictures etc)
+   - manage bookings 
+
+* Registered and logged in as a hotel manager :
    * Add hotel page: On this page You can fill hotel details and add your hotel.
    * Manage hotel: On this page you can change any detail of your hotel.
    * Manage bookings: On the manage booking page, you will see all your hotel bookings with booking detail and here you can check in and checkout to the customer.
    * Profile page:  you can change any details related to your profile.
 
-*  As a user :
+*  Registered and logged in as a user :
    *  Listing page: on this page you will see all hotels list and you can search by city .
    *  On clicking Booknow botton you can book hotel room after filling details.
    * My Booking page : On this page you will see
@@ -54,10 +67,6 @@ In terms of complexity, I used **Django** with more than one model (explained be
   * Room model for hotels room detail
   * Booking model all the details for booking
 
-* In api folder files contain logic about user and hotel api
-* Components/auth folder register and login template
-* Components/layout folder contain  layout for website
-* Components/pages folder contained all the different js files for hotel
   
 ## Project Structure
 
@@ -193,6 +202,7 @@ In terms of complexity, I used **Django** with more than one model (explained be
 2. windows / linux / mac with python3 installed
 ```
 ## Setup
+this app consists of two apps, Django service as API backend, ReactJS as frontend app. please follow the instructions given below to set up.
 
 1. Initialize the virtual environment and activate it
 ```bash
@@ -203,7 +213,7 @@ source .venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-## Run
+## Run in locally
 For Backend
 ```bash
 python3 manage.py migrate
